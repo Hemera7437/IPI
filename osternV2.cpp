@@ -30,7 +30,7 @@ std::string easter(int y) {
 	x = 22 + d + e;
 	(x == 57)? test = 50   :   (x == 56 && d == 28 && a > 10)? test = 49   :   test = x ;
 	(test < 32)? Monat = "Maerz", z=test : z = test - 31, Monat = "April";
-	std::cout << "Ostern war am " << to_string(z) << ". " << Monat;
+	std::cout << to_string(y) << " war Ostern am " << to_string(z) << ". " << Monat;
 }
 
 int main(){
