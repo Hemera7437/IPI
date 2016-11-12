@@ -54,7 +54,7 @@ int floorMod(int a, int b) {
 	int r;
 	r = a - b * floorDiv (a,b);
 }  
-/*Wie unterscheidet sich floorMod () von der %-operation in c++? 
+/*Wie unterscheidet sich floorMod () von der %-operation in c++? (aufgabe 2c)
 	
 */
 
