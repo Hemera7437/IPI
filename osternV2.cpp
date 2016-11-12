@@ -34,6 +34,16 @@ std::string easter(int y) {
 }
 
 int main(){
-	//assert easter(1902);
+	/*
+	int y;
+	std::cout << "Geben sie die Jahreszahl ein" << std::endl;
+	std::cin >> y;
+	assert(y > 1583);
 	easter(1902);
+	*/
+	int y;
+	std::cout << "Geben sie die Jahreszahl ein" << std::endl;
+	std::cin >> y;
+	assert(y > 1583);
+	easter(y);
 }
