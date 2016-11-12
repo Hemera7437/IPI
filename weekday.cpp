@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <cassert>
+#include <cmath> 
 
 template<typename T>
 std::string to_string(const T& value)
@@ -40,6 +41,23 @@ int weekday2001(int d, int m, int y){
 	
 	std::cout << to_string(d) << "." << to_string(m) << "." << to_string(y)  << " war ein " << Tag;
 }
+
+int floorDiv(int a, int b){
+	int test, r;
+	test = a/b;
+	(test > 0)? r = a/b
+		: r = ( -( std::abs(a)  / std::abs(b)) + -1 ); 
+	return r;
+}
+
+int floorMod(int a, int b) {
+	int r;
+	r = a - b * floorDiv (a,b);
+}  
+/*Wie unterscheidet sich floorMod () von der %-operation in c++? 
+	
+*/
+
 
 int main () {
 	int d, m, y;
