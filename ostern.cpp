@@ -1,6 +1,7 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <sstream>
+#include <cassert>
 
 template<typename T>
 std::string to_string(const T& value)
