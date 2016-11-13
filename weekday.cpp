@@ -68,7 +68,7 @@ int weekday(int d, int m, int y){
 	j1 = floorMod( ( 365*z + floorDiv(z,4) - floorDiv(z,100) + floorDiv(z,400) ) , 7 ) ;
 	
 	( ( (y%4) == 0 && (y%100) != 0 ) || (y%400) == 0 ) ? schalt = 1 
-		:  schalt =0;	
+		:  schalt =0;	  //funktioniert jedesmal nach dem schaltjahr komisch: vor schaltjahr richtig --> nach schaltjahr falsch --> nach nächstem schaltjahr wieder richtig
 	
 	(m == 1)? p = d  : 
 		(m == 2)? p = d + 31 : 

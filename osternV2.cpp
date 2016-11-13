@@ -44,6 +44,6 @@ int main(){
 	int y;
 	std::cout << "Geben sie die Jahreszahl ein" << std::endl;
 	std::cin >> y;
-	assert(y > 1583);
+	assert (y > 1583);
 	easter(y);
 }
