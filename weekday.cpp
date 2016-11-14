@@ -57,7 +57,8 @@ int floorMod(int a, int b) {
 	r = a - b * floorDiv (a,b);
 }  
 /*Wie unterscheidet sich floorMod () von der %-operation in c++? (aufgabe 2c)
-	
+	floorMod kann auch das richtige Modulo von negativen Zahlen rechnen z.B. -12%5 = 3
+	die %-Operation kann dies nicht: -12%5 wird als -2 ausgegeben, es wird also -(12%5) gerechnet
 */
 
 int weekday(int d, int m, int y){
