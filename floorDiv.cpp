@@ -14,6 +14,11 @@ int floorDiv(int a, int b){
 }
 
 int main() {
+	assert(floorDiv(-12,5)==-3);
+    assert(floorDiv(12,-5)==-3);
+    assert(floorDiv(-17,9)==-2);
+    assert(floorDiv(17,-9)==-2);
+	
 	int a= -12;
 	int b= 5;
 	//int r = a/b;
