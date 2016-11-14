@@ -44,13 +44,13 @@ int weekday2001(int d, int m, int y){
 
 int floorDiv(int a, int b){
 	int test, r;
-	test = a/b;
-	(test > 0)? r = a/b
-		: r = ( -( std::abs(a)  / std::abs(b)) + -1 ); 
+	int c = std::abs(b) - 1;
+	test = a / b;
+	(test > 0)? r = a / b
+		: r = (-( std::abs(a) + c / std::abs(b))); 
 	return r;
 }
-/* bei - (|a| + c) / |b| muss c in Abhängigkeit von a und b eigentlich 
-c=a%b, wobei floorMod(a,b) verwendet wird, sein*/
+
 
 int floorMod(int a, int b) {
 	int r;

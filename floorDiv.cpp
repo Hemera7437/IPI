@@ -6,12 +6,12 @@
 
 int floorDiv(int a, int b){
 	int test, r;
-	test = a/b;
-	(test > 0)? r = a/b
-		: r = ( -( (std::abs(a) /*+ a%b + b*/ ) / std::abs(b)) + (-1) ); 
+	int c = std::abs(b) - 1;
+	test = a / b;
+	(test > 0)? r = a / b
+		: r = (-( std::abs(a) + c / std::abs(b))); 
 	return r;
 }
-
 
 int main() {
 	int a= 12;
