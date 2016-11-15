@@ -121,7 +121,9 @@ int weekday(int d, int m, int y){
 //Teilaufgabe e)
 
 /* Warum funktioniert das auch mit z = y - 1?
-	
+	Alle 400 Jahre (z.B. 401, 801, 1201, 1601 und 2001 (aufgabe 2a))  beginnt das Jahr mit einem Montag. Was bedeutet,
+	dass nach 2000 Jahren auch wieder ein Montag an diesem Datum ist. 
+	Daher kann man auch y - 1 schreiben, da 2000 Jahre früher der gleiche Tag am gleichen Datum war.
 	
 */
 
