@@ -64,7 +64,8 @@ int floorDiv(int a, int b){
 	Eigentlich sollte c in diesem Fall c = a%b entsprechen, wobei floorMod verwendet wird
 	Dies kann in dieser Funktion nicht implementiert werden (Fehler: "floorMod was not declared in this scope"), 
 	weil C++ alles "von oben nach unten" ausführt.
-	Deswegen haben wir c als c = |b| - 1 gesetzt. Dies ist möglich, da  
+	Deswegen haben wir c als c = |b| - 1 gesetzt. Dies ist möglich, da ((|a| + c) / b) für jede Zahl genau in den Bereich der
+	Zahl "drüber" kommt (z.B. 2,4 --> 3). Im negativen wird -((|a| + c) / b) dadurch immer abgerundet
 */
 
 //Teilaufgabe c)
