@@ -29,24 +29,26 @@ std::string to_lower (std::string s) {
 std::string letters_only(std::string s) {
 	int i=0;
 	int k = s.size(); 
-	std::string temp;
-	
+	char c;
+	//std::string temp;	
 
-	//char str[]="C++";
 	while (i < k)
 	{
+
 		if ( isalpha(s[i]) ) {
 			printf ( "character %c is alphabetic\n", s[i] );
+			//c = s[i];
 		}
 		
 		else {
 			printf ( "character %c is not alphabetic\n", s[i] );
-			//s[i] = temp [1];
 			//std::cout << ("character %c" , s[i]) << std::endl;
 		}
 		i++;
 	}
-	std::cout << "letters_only: " << s << std::endl;
+	
+	//s =+ c;
+	std::cout << "letters_only: " << c << std::endl;
 	
 }
 
