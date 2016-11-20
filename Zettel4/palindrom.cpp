@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <cassert>
@@ -29,6 +29,7 @@ std::string to_lower (std::string s) {
 std::string letters_only(std::string s) {
 	int i=0;
 	int k = s.size(); 
+	std::string temp = "";
 
 	//char str[]="C++";
 	while (i < k)
@@ -39,7 +40,7 @@ std::string letters_only(std::string s) {
 		
 		else {
 			printf ( "character %c is not alphabetic\n", s[i] );
-			
+			s[i] = temp [i];
 			//std::cout << ("character %c" , s[i]) << std::endl;
 		}
 		i++;
