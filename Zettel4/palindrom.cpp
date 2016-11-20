@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <sstream>
 #include <cassert>
@@ -19,6 +19,11 @@ std::string to_lower (std::string s) {
 	
 	std::cout << c << std::endl;  	
 	
+	s =+ c;
+	
+	std::cout << s << std::endl;
+	
+	return s;	
 }
 
 std::string letters_only(std::string s) {
