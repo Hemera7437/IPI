@@ -17,7 +17,7 @@ std::string to_lower (std::string s) {
 		i++;
 	}
 	
-	std::cout << c << std::endl;  	
+	//std::cout << c << std::endl;  	
 	
 	s =+ c;
 	
@@ -29,7 +29,8 @@ std::string to_lower (std::string s) {
 std::string letters_only(std::string s) {
 	int i=0;
 	int k = s.size(); 
-	std::string temp = "";
+	std::string temp;
+	
 
 	//char str[]="C++";
 	while (i < k)
@@ -40,7 +41,7 @@ std::string letters_only(std::string s) {
 		
 		else {
 			printf ( "character %c is not alphabetic\n", s[i] );
-			s[i] = temp [i];
+			//s[i] = temp [1];
 			//std::cout << ("character %c" , s[i]) << std::endl;
 		}
 		i++;
