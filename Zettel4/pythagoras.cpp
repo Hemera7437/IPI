@@ -21,6 +21,13 @@ bool is_square(int n){
 		return false;
 	}	
 }
+/*Teilaufgabe 2b
+Beweisen Sie die Gültigkeit der obigen Aussage mit Hilfe der allgemeinen Eigenschaft der Modulo-Operation
+(m * n)%k = ( (m%k) * (n%k) ) % k
+==> n= 16 -->  (4*4)%4  = 0 = ( (4%4) * (4%4) )%4  wobei das letzte %4 nichts mehr macht = (4%4) * (4%4)
+==> n= 25 -->  (5*5)%4  = 1 = ( (5%4) * (5%4) )%4
+==> n= 6  -->  (2*3)%4  = 2 = ( (2%4) * (3%4) )%4  ==> 6 ist keine Quadratzahl
+*/
 
 void pythagorean_triple(int bmax){
 	int a, b;
