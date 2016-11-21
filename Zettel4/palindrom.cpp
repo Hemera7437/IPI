@@ -1,69 +1,57 @@
 #include <iostream>
-#include <string>
-#include <sstream>
-#include <cassert>
 #include <cctype>
-#include <stdio.h>
+#include <cassert>
 
+using namespace std;
 
-std::string to_lower (std::string s) {
-	int i=0;
-	int k = s.size(); 
+string to_lower(string s){
+	int length = s.size();
+	string result = "";
 	char c;
-	while (i <= k)
-	{
+	for(int i = 0; i < length; ++i){
+		c = tolower(s[i]);
+		result += c;
+	}
+	return result;
+}
+
+string letters_only(string s){
+	int length = s.size();
+	string result = "";
+	char c;
+	for(int i = 0; i < length; ++i){
 		c = s[i];
-		putchar (tolower(c));
-		i++;
-	}
-	
-	//std::cout << c << std::endl;  	
-	
-	s =+ c;
-	
-	std::cout << s << std::endl;
-	
-	return s;	
-}
-
-std::string letters_only(std::string s) {
-	int i=0;
-	int k = s.size(); 
-	char c;
-	//std::string temp;	
-
-	while (i < k)
-	{
-
-		if ( isalpha(s[i]) ) {
-			printf ( "character %c is alphabetic\n", s[i] );
-			//c = s[i];
+		if(isalpha(c)){
+			result.insert(0, 1, c);
 		}
-		
-		else {
-			printf ( "character %c is not alphabetic\n", s[i] );
-			//std::cout << ("character %c" , s[i]) << std::endl;
-		}
-		i++;
 	}
-	
-	//s =+ c;
-	std::cout << "letters_only: " << c << std::endl;
-	
+	return result;
 }
 
-/*
-bool is palindrom(std::string s) {
-	
-	
+bool is_palindrom(string s){
+	bool pali = false;
+	if(letters_only(letters_only(s)) == letters_only(s)){
+		pali = true;
+	}
+	return pali;
 }
-*/
 
 int main(){
-	std::cout << "Geben sie ein Wort oder einen Satz ein" << std::endl;
-	std::string s;
-	char c;
-	std::getline(std::cin, s);
-	to_lower(s);
-	letters_only(s);
+	string s;
+	//asserts
+	assert (is_palindrom("anna") == true);
+	assert (is_palindrom("otto") == true);
+	assert (is_palindrom("ein neger mit gazelle zagt im regen nie") == true);
+	assert (is_palindrom("hallo") == false);
+	assert (is_palindrom("ipi") == true);
+	assert (is_palindrom("xyz") == false);
+	
+	cout << "Geben sie ein Wort oder einen Satz ein" << std::endl;
+	getline(cin, s);
+	s = to_lower(s);
+	if(is_palindrom(s)){
+		cout << "ist ein Palindrom";
+	} else {
+		cout << "ist kein Palindrom";
+	}
 }
