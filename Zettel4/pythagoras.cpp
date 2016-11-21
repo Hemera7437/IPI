@@ -43,5 +43,5 @@ void pythagorean_triple(int bmax){
 
 int main (){
 	int bmax = 400;
-	pythagorean_triple(bmax);	
+	pythagorean_triple(bmax);
 }
