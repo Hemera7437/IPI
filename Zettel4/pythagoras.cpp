@@ -27,7 +27,7 @@ void pythagorean_triple(int bmax){
 	for (b = 1; b <= bmax; ++b){
 		for (a = 1; a < b; ++a){
 			if ( is_square(a*a + b*b) == true ) {
-				cout << "(" << a << ", " << b ", " << c << ")";
+				cout << "(" << a << ", " << b << ", " << sqrt(a*a + b*b) << ")" << endl;
 			}
 		}
 	}
