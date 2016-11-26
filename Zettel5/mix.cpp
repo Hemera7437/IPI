@@ -5,11 +5,18 @@
 
 using namespace std;
 
-vector <std::string> split_words(std::string s)
+vector <string> split_words(string s)
 {
-    s.find(" ");
+    vector<string> v1;    
+    v1.push_back(s);
+    
+    //s.find(" ");
+    
+    return v1;
 }
 
 int main () {
+    string s = "Alpha";
+    cout << split_words << endl;
     return 0;
 }
