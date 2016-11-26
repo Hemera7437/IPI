@@ -5,14 +5,20 @@
 
 using namespace std;
 
-string findeLeerzeichen(string s){
+vector <string> findeLeerzeichen(string s){
+    vector<string> Leerzeichen;
+    
     int length = s.size();
     int pos = s.find(" ");
+    int i;     
     
     string s1 = s.substr(0, pos);
     string s2 = s.substr(pos, length);
     cout << s1 << " , " << s2 <<endl;	
-    return s1, s2;
+    
+    Leerzeichen.push_back(s1);
+    Leerzeichen.push_back(s2);
+    return Leerzeichen;
 }
 
 vector <string> split_words(string s)
@@ -26,8 +32,9 @@ vector <string> split_words(string s)
 }
 
 int main () {
-    string s = "Alpha Beta";
+    string s = "Alpha Beta!";
     string s1, s2;
+    
     findeLeerzeichen(s);
 	vector<string> b = split_words(s);
     
