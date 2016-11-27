@@ -1,16 +1,15 @@
 #include <iostream>	
 #include <vector>
-#include <cmath>
 #include <algorithm>
 
 using namespace std;
 
-vector <string> findSpace(string s){
+vector <string> findSpace(string s){  //meine eigene Funktion um den String bei Leerzeichen zu trennen
     vector<string> space;
     
     int length = s.size();
     int pos = s.find(' ');
-    int i;     
+    //int i;     
 	string pickName;
     for(int i = 0; i < length; ++i){
 		if(s[i] == ' '){
@@ -32,10 +31,26 @@ vector <string> split_words(string s)					// diese funktion wurde übertragen au
     
 	for(int i = 0; i < c.size(); ++i){					// hier wird jedes wort einzeln ausgespuckt
 		v1.push_back(c[i]);
-        //cout << c[i] << endl;
 	}
     
     return v1;
+}
+
+std::string mix(std::string s){
+    vector<string> toMix; 
+    vector<string> mixing;
+    string result;
+  
+    toMix.push_back(s);    
+    
+    random_shuffle(toMix.begin(), toMix.end());    
+    
+    for (auto const& s : mixing) 
+    {
+        result += s;
+    }
+    
+    return " .";
 }
 
 int main () {
@@ -53,6 +68,8 @@ int main () {
 	for(int i = 0; i < b.size(); ++i){
 		cout << b[i] << endl;
 	}
+    
+    cout << mix(s) << endl;
     
     return 0;
 }
