@@ -5,10 +5,11 @@
 
 using namespace std;
 
-map <char, int> counts;
+map <char, int> counts;  //3b
+map <int, char> sorted;  //3c
 
-
-int main (){
+int main (){    
+    //Aufgabe 3a
     ifstream infile("encrypted_text.txt"); // Datei öffnen
     string text; // leerer String für den eingelesenen Text
     string line; // leerer String für die aktuelle Zeile
@@ -17,7 +18,7 @@ int main (){
         text += line + "\n"; // ... und an den Text anhängen
     }
     
-    
+    //Aufgabe 3b
     for (char i = 97; i <= 122; ++i){   //den count aller Buchstaben auf 0 setzen 
         counts [i] = 0;                 // 97 - 'a' und 122 - 'z'
     }
@@ -30,9 +31,14 @@ int main (){
         }
     }
     
-    for (char i = 97; i <= 122; ++i){   //Häufigkeit der Buchstaben ausgeben lassen
+    /*for (char i = 97; i <= 122; ++i){   //Häufigkeit der Buchstaben ausgeben lassen
         cout << counts[i] << " ";
+    }*/
+    
+    //Aufgabe 3c
+    for (char i = 97; i <= 122; ++i){   //schlüssel und wert von counts vertauschen
+        auto current = ( sorted[ counts[i] ] = i );
+        cout << current << " " << counts [i];
     }
-
     
 }
