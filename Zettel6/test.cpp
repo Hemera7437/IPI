@@ -7,17 +7,6 @@ using namespace std;
 
 map <char, int> counts;
 
-string to_lower(string s){
-	int length = s.size();
-	string result = "";
-	char c;
-	for(int i = 0; i < length; ++i){
-		c = tolower(s[i]);
-		result += c;
-	}
-	return result;
-}
-
 
 int main (){
     ifstream infile("encrypted_text.txt"); // Datei öffnen
