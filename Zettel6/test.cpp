@@ -20,7 +20,7 @@ string to_lower(string s){
 
 
 int main (){
-    ifstream infile("text.txt"); // Datei öffnen
+    ifstream infile("encrypted_text.txt"); // Datei öffnen
     string text; // leerer String für den eingelesenen Text
     string line; // leerer String für die aktuelle Zeile
     while(infile){
@@ -28,26 +28,22 @@ int main (){
         text += line + "\n"; // ... und an den Text anhängen
     }
     
-    string textLow = to_lower(text);    //damit 'A' und 'a' der gleiche Buchstabe ist
     
     for (char i = 97; i <= 122; ++i){   //den count aller Buchstaben auf 0 setzen 
         counts [i] = 0;                 // 97 - 'a' und 122 - 'z'
     }
     
-    for(auto iter = text.begin(); iter != text.end(); ++iter) {
-        /*char current = text[iter];
-        cout << current << endl;
-        counts[current]++;
-        ++ ( counts [ text[iter] ] );
-        cout << counts[iter]; */
+    for(int iter = 0; iter < text.length(); ++iter) {
+        char current = text[iter];
+        if (isalpha(current)){
+            current = tolower(text[iter]);  //damit 'A' und 'a' der gleiche Buchstabe ist    
+            ++counts[current] ;
+        }
     }
     
-    char test = 'a';
-    cout << ++counts[test] << test;
-    
-    //cout << counts[ text[1] ];
-    
-    //for (char i = 97; i <= 122; ++i){  cout << "counts " << counts[i]; }
+    for (char i = 97; i <= 122; ++i){   //Häufigkeit der Buchstaben ausgeben lassen
+        cout << counts[i] << " ";
+    }
 
     
 }
