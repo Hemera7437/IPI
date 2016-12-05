@@ -5,18 +5,8 @@
 
 using namespace std;
 
-map <char, int> counts; 
-//char c =  122;        //65 = A , 97 = a
-
-map <char, int> sorted;
-
-/*vector<char> letters{
-    
-}*/
-
-map <char, char> decrypt;
-
-int main(){
+int main (){    
+    //Aufgabe 3a
     ifstream infile("encrypted_text.txt"); // Datei öffnen
     string text; // leerer String für den eingelesenen Text
     string line; // leerer String für die aktuelle Zeile
@@ -25,5 +15,44 @@ int main(){
         text += line + "\n"; // ... und an den Text anhängen
     }
     
-    //cout << c;
+    //Aufgabe 3b
+	map <char, int> counts;  //3b
+    for (char i = 97; i <= 122; ++i){   //den count aller Buchstaben auf 0 setzen 
+        counts [i] = 0;                 // 97 - 'a' und 122 - 'z'
+    }
+    
+    for(int iter = 0; iter < text.length(); ++iter) {
+        char current = text[iter];
+        if (isalpha(current)){
+            current = tolower(text[iter]);  //damit 'A' und 'a' der gleiche Buchstabe ist
+            ++counts[current];	
+        }
+    }
+    
+    //Aufgabe 3c
+	map <int, char> sorted;  //3c
+    for (char i = 97; i <= 122; ++i){   //schlüssel und wert von counts vertauschen
+        sorted[counts[i]] = i;
+    }
+    vector<char> letters = {'z', 'j', 'q', 'x', 'k', 'v', 'b', 'y', 'g', 'p', 'w', 'f', 'm', 'c', 'u', 'l', 'd', 'r', 'h', 's', 'n', 'i', 'o', 'a', 't', 'e'};
+	
+	//Aufgabe 3d
+	map <char, char> decrypt; //3d 
+    int j = 0;
+    
+	for(auto i:sorted){  //letters den schlüsseln von sorted zuordnen --> schlüssel von decrypt sind die verschlüsselten Buchstaben
+		decrypt[i.second] = letters[j];
+		decrypt[toupper(i.second)] = toupper(letters[j]); //damit auch großbuchstaben ausgegeben werden 
+		++j;		
+    }
+	
+	//Aufgabe 3e
+	ofstream outFile("decrypted_text.txt");
+	for(int iter = 0; iter < text.length(); ++iter) {
+        if(isalpha(text[iter])){
+			outFile << decrypt[text[iter]];
+		}else{
+			outFile << text[iter];  //damit die Punkt- und Kommastellung gleichbleibt
+		}
+    }
 }
